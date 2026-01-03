@@ -12,21 +12,25 @@ class DocumentTile extends StatelessWidget {
         : '${(document.size / 1024).toStringAsFixed(1)}KB';
 
     return Card(
-      color: Colors.blue, //後で調整
-      margin: EdgeInsets.all(20), //後で調整
+      color: Colors.blue.shade300, //後で調整
+      margin: EdgeInsets.all(4), //後で調整
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 3, horizontal: 12), //後で調整
+        padding: EdgeInsets.all(4), //後で調整
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(Icons.text_snippet_outlined),
+            Icon(Icons.text_snippet_outlined, size: 20),
             SizedBox(width: 12),
             Expanded(
               child: Column(
+                mainAxisSize: MainAxisSize.min, //後で調整
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(document.name),
-                  Text(document.uploadedAt.toIso8601String().substring(0, 10)),
+                  Text(document.name, style: TextStyle(fontSize: 14)),
+                  Text(
+                    document.uploadedAt.toIso8601String().substring(0, 10),
+                    style: TextStyle(fontSize: 12),
+                  ),
                 ],
               ),
             ),
