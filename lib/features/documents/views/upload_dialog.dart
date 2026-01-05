@@ -23,11 +23,26 @@ class _UploadDialogState extends ConsumerState<UploadDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('ドキュメントをアップロード'),
-      content: Column(mainAxisSize: MainAxisSize.min, children: [
-          
+      title: Text('ドキュメントアップロード'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          TextField(
+            controller: _nameController,
+            decoration: InputDecoration(
+              labelText: 'サンプルファイル',
+              hintText: 'サンプル.pdf',
+            ),
+          ),
         ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(true),
+          child: Text('キャンセル'),
         ),
+        ElevatedButton(onPressed: () {}, child: child),
+      ],
     );
   }
 }
