@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:rag_knowledge_assistant_frontend/features/documents/views/document_page.dart';
 import 'package:rag_knowledge_assistant_frontend/features/chat/views/chat_page.dart';
+import 'package:rag_knowledge_assistant_frontend/core/widgets/main_shell.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/documents',
