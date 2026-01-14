@@ -5,7 +5,15 @@ import 'package:rag_knowledge_assistant_frontend/features/chat/views/chat_page.d
 final appRouter = GoRouter(
   initialLocation: '/documents',
   routes: [
-    GoRoute(path: '/documents', builder: (context, state) => DocumentPage()),
-    GoRoute(path: '/chat', builder: (context, state) => ChatPage()),
+    ShellRoute(
+      builder: (context, state, child) => MainShell(child: child),
+      routes: [
+        GoRoute(
+          path: '/documents',
+          builder: (context, state) => DocumentPage(),
+        ),
+        GoRoute(path: '/chat', builder: (context, state) => ChatPage()),
+      ],
+    ),
   ],
 );
